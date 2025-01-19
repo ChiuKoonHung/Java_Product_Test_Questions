@@ -1,0 +1,4 @@
+select a.name, b.sport, b.score from players a, scores b
+where a.Player_no = b.Player_no
+group by a.name, b.sport
+order by a.name, b.score desc;
