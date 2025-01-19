@@ -1,0 +1,4 @@
+public List<Student> findStudentByName(String nameStartsWith) {
+  String sql = "SELECT name, gender FROM student WHERE name LIKE ?";
+  return template.query(sql, (rs, rowNum) -> new Student(rs.getString("name"), rs.getString("gender")), nameStartsWith + "%");
+}
